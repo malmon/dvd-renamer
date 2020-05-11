@@ -1,5 +1,6 @@
 import requests
 import os
+import shutil
 
 source_dir = '/source'
 destination_dir = '/destination'
@@ -21,7 +22,7 @@ while True:
                     print("Directory Already Exists Moving To Dumping Dir For Manual Processing")
                 else:
                     destination_path = os.path.join(destination_dir, dest_str)
-                    destination_file = os.path.join(destination_path, '{}{}'.format(dest_str, file_extention))
-                    print("Moving File {} to {}".format(source_file, destination_file))
-                    os.mkdir(destination_path)
-                    os.rename(source_file, destination_file)
+                destination_file = os.path.join(destination_path, '{}{}'.format(dest_str, file_extention))
+                print("Moving File {} to {}".format(source_file, destination_file))
+                os.mkdir(destination_path)
+                shutil.move(source_file, destination_file)
