@@ -14,7 +14,7 @@ while True:
         if file.endswith(file_extention):
             source_file = os.path.join(source_dir, file)
             print("Found file {}".format(source_file))
-            r = requests.get('http://www.omdbapi.com/?apikey={}&t={}'.format(apikey, os.path.splitext(file)[0].replace(' ','+').replace('_','+'))
+            r = requests.get('http://www.omdbapi.com/?apikey={}&t={}'.format(apikey, os.path.splitext(file)[0].replace(' ','+').replace('_','+')))
             try:
                 if r.status_code == 200:
                     json_data = r.json()
