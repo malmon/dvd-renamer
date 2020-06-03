@@ -26,6 +26,7 @@ while True:
                         destination_path = os.path.join(destination_dir, dest_str)
             except:
                 print("Error With Renaming DVD {}!  Moving To Trash".format(os.path.splitext(file)[0].replace(' ','+').replace('_','+')))
+                dest_str = '{}'.format(os.path.splitext(file)[0].replace(' ','+').replace('_','+'))
                 destination_path = os.path.join(dump_dir, dest_str)
             destination_file = os.path.join(destination_path, '{}{}'.format(dest_str, file_extention))
             print("Moving File {} to {}".format(source_file, destination_file))
