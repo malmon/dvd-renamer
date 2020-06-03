@@ -1,13 +1,14 @@
 import requests
 import os
 import shutil
+from time import sleep
 
 source_dir = '/source'
 destination_dir = '/destination'
 dump_dir = '/trash'
 file_extention = '.mkv'
 apikey = os.environ.get('APIKEY')
-
+print("Starting DVD Renamer")
 while True:
     for file in os.listdir(source_dir):
         if file.endswith(file_extention):
@@ -26,3 +27,4 @@ while True:
                 print("Moving File {} to {}".format(source_file, destination_file))
                 os.mkdir(destination_path)
                 shutil.move(source_file, destination_file)
+    sleep(10)

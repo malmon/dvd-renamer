@@ -6,4 +6,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY renamer.py ./
 
-CMD [ "python", "./renamer.py" ]
+CMD [ "python","-u" , "./renamer.py" ]
